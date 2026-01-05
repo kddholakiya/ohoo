@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Pacifico, Caveat, Lobster_Two} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+const pacifico = Pacifico({
   subsets: ["latin"],
-});
+  weight: "400",
+  variable: "--font-pacifico",
+})
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-caveat",
+})
+
+const lobsterTwo = Lobster_Two({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lobster-two",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pacifico.variable} ${caveat.variable} ${lobsterTwo.variable} antialiased`}
       >
         {children}
       </body>
