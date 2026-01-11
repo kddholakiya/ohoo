@@ -106,13 +106,13 @@ export default function LogoWithEyes({
         {/* First Eye - Third letter O in OHIO (after I) */}
         <circle 
           className="iris" 
-          cx="127" 
+          cx="124" 
           cy="33" 
           r="10"
         />
         <circle 
           className="pupil transition-transform duration-100 ease-out" 
-          cx={127 + leftEye.x} 
+          cx={124 + leftEye.x} 
           cy={33 + leftEye.y} 
           r="5"
         />

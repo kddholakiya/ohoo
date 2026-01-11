@@ -46,7 +46,7 @@ import LogoWithEyes from "@/components/Logo/logo"
     const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
     return (
-      <div className="group  relative sticky top-0 z-40 pointer-events-none hidden">
+      <div className="group  relative sticky top-0 z-40 pointer-events-none">
         <header className="w-full border-b-0 backdrop-blur bg-[#E53119] sticky transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] group-hover:h-2 group-hover:relative border-b-0">
           <div className="absolute right-10 top-0 z-50 transform">
             <Sheet>
