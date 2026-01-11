@@ -12,6 +12,8 @@
     SheetTitle,
   } from "@/components/ui/sheet"
   import Image from "next/image"
+import { useEffect, useRef } from "react"
+import LogoWithEyes from "@/components/Logo/logo"
 
   // CHANGE 1: Added submenu structure to navItems
   const navItems = [
@@ -44,14 +46,14 @@
     const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
     return (
-      <div className="group relative z-40 pointer-events-none">
-        <header className="w-full border-b backdrop-blur bg-rose-700/90 sticky transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] group-hover:h-2 group-hover:relative">
-          <div className="absolute left-1/2 top-0 z-50 -translate-x-1/2 transform">
+      <div className="group  relative sticky top-0 z-40 pointer-events-none">
+        <header className="w-full border-b-0 backdrop-blur bg-[#E53119] sticky transition-all duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] group-hover:h-2 group-hover:relative border-b-0">
+          <div className="absolute right-10 top-0 z-50 transform">
             <Sheet>
               <SheetTrigger asChild>
                 <button 
                   aria-label="Open menu" 
-                  className="pointer-events-auto flex items-center gap-2 rounded-b-full bg-rose-700/90 px-3 py-1 shadow-lg transition-transform duration-400 ease-[cubic-bezier(.22,1,.36,1)] hover:translate-y-1.5 hover:shadow-xl active:scale-[.99]" 
+                  className="pointer-events-auto flex items-center gap-2 rounded-b-full px-3 py-1 border-none bg-[#E53119] shadow-lg transition-transform duration-400 ease-[cubic-bezier(.22,1,.36,1)] hover:translate-y-1.5 hover:shadow-xl active:scale-[.99]" 
                   style={{ willChange: "transform" }}
                 >
                   <span className="flex h-6 w-6 py-5 items-center justify-center rounded-full">
@@ -60,7 +62,7 @@
                 </button>
               </SheetTrigger>
 
-              <SheetContent side="top" hideClose className="bg-rose-700/90 text-white p-0 border-b-0">
+              <SheetContent side="top" hideClose className="bg-[#E53119] text-white p-0 border-b-0">
                 <SheetHeader>
                   <SheetTitle>
                     <div className="flex flex-col items-center gap-2 py-0 px-4">
@@ -95,7 +97,7 @@
                               <Link
                                 key={subitem.href}
                                 href={subitem.href}
-                                className="text-2xl lowercase text-white/90 hover:text-amber-100  transition-colors px-2"
+                                className="text-2xl lowercase text-white hover:text-amber-100  transition-colors px-2"
                               >
                                 {subitem.label}
                               </Link>
@@ -113,7 +115,7 @@
                   </div>
 
                   <SheetClose asChild>
-                    <button className="absolute -bottom-11 left-1/2 -translate-x-1/2 transform rounded-b-full bg-rose-700/90 px-3 py-4 text-white shadow-lg">
+                    <button className="absolute -bottom-11 right-10 transform rounded-b-full bg-[#E53119] px-3 py-4 text-white shadow-lg">
                       <X className="size-5" />
                     </button>
                   </SheetClose>
@@ -121,7 +123,12 @@
               </SheetContent>
             </Sheet>
           </div>
+          <div className="absolute left-10 top-2 z-50 transform ">
+            <Link href="/" className="flex items-center gap-2">
+              <LogoWithEyes height={30} width={90} />
+            </Link>
+          </div>
         </header>
       </div>
-    )
+    ) 
   }
