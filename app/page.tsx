@@ -4,11 +4,10 @@ import Image from "next/image";
 
 export default function Home() {
   console.log('process.env.NEXT_PUBLIC_LAUNCH:', process.env.NEXT_PUBLIC_LAUNCH)
-  if (process.env.NEXT_PUBLIC_LAUNCH === "false") {
+  if (process.env.NEXT_PUBLIC_LAUNCH?.toString() === "false") {
     return <HeroSection />;
   } else {
 
-    console.log('process.env.NEXT_PUBLIC_LAUNCH elseeeeeeeee:', process.env.NEXT_PUBLIC_LAUNCH)
     return (
       <div className="bg-black border-0">
         <Navbar />
